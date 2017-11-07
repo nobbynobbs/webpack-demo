@@ -8,7 +8,9 @@ module.exports = {
     print: './src/print.js'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], {
+      exclude: ['.gitkeep']
+    }),
     new HtmlWebpackPlugin({
       title: 'Output Management'
     })
