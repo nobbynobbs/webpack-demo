@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Dynamic Imports'
+      title: 'Lazy Loading'
     })
   ],
   output: {
