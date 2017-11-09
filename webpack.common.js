@@ -5,12 +5,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    main: './src/index.js',
+    vendor: [
+      'lodash'
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Caching'
+    }),
+    new webpack.NamedModulesPlugin(), // development
+    //new webpack.HashedModuleIdsPlugin(), // production
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime'
