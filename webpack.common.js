@@ -11,6 +11,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Caching'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
     })
   ],
   output: {
