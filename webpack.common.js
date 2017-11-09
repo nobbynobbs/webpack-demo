@@ -10,12 +10,12 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Lazy Loading'
+      title: 'Caching'
     })
   ],
   output: {
-    filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
+    chunkFilename: '[name].[chunkhash].bundle.js',
     path: path.resolve(__dirname, 'dist')
   }
 };
